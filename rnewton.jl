@@ -35,6 +35,7 @@ function rnewton(fun,x0,err,mit)
     end
     x0 = x1
   end
+  println("Se supero el maximo de iteraciones sin encontrar una raiz menor a", err)
   println("Valores historicos de puntos generados y valores historicos de los valores funcionales")
   return (hx, hf)
 end

@@ -36,4 +36,6 @@ function rbisec(fun,I,err,mit)
       u = w
     end
   end 
+  println("Se paso del maximo de iteraciones sin encontrar una raiz con error menor a", err)
+  return (hx,hf)
 end
