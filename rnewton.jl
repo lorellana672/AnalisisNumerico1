@@ -22,16 +22,19 @@ function rnewton(fun,x0,err,mit)
   push!(hx,x0)
   push!(hf,v)
   for k = 1:mit
+    if (abs(x0) < err)
+      println("Valores historicos de puntos generados y valores historicos de los valores funcionales")
+      return (hx, hf)
     x1 = (x0 - v)/ deriv(fun,x0)
-    println(deriv(fun,x0))
     v = fun(x1)
     push!(hf,v)
     push!(hx,x1)
-    if (abs(x1-x0) < err)
+    if (((abs(x1-x0))/x1) < err)
       println("Valores historicos de puntos generados y valores historicos de los valores funcionales")
       return (hx, hf)
     end
     x0 = x1
   end
-  return 0
+  println("Valores historicos de puntos generados y valores historicos de los valores funcionales")
+  return (hx, hf)
 end
