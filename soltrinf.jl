@@ -22,7 +22,7 @@ function soltrinf(a,b)
    println("el wj",w[j])
    println("el wi es",w[i])
     end                                                                                                                                          
-    w[i]=(w[i]/a[diagelem[i]])
+    w[i]=(w[i]/diagelem[i])
     
   end
     println("El valor de x es")
